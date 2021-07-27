@@ -10,8 +10,13 @@ function detectSpecial() {
 
     var alamatdetail = myArr[1];
     document.getElementById("full_name").value = myArr[0]; 
-    document.getElementById("phone_number").value = myArr[2];
-
+   var bb = myArr[2];
+    alert(bb);
+    if (bb == "" || bb == undefined) {
+        alert("xde");
+    } else {
+        document.getElementById("phone_number").value = myArr[2];
+    }
     if (myArr[3] == null || myArr[3] == "") {
     } else {
         document.getElementById("email_address").value = myArr[3];
