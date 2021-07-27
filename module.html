@@ -1,0 +1,214 @@
+﻿<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="popup.css" rel="stylesheet">
+<link href="formmodule.css" rel="stylesheet">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.bootcss.com/popper.js/1.15.0/esm/popper.min.js" type="module"></script>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+       
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title>SMART ENTRY FUNCTION</title>
+
+</head>
+
+<body>
+  
+    <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+        <div class="container">
+            <a class="navbar-brand" href="#">Form</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+               
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="my-form">
+        <div class="cotainer">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header h5">-BUYER DETAILS-</div>
+                        <div class="card-body">
+
+                            <form name="my-form" onsubmit="return validform()" action="success.php">
+                                
+                                <div class="form-group row">
+                                    <div class="col-md-12 offset-md-5">
+                                        <button type="button" class="btn btn-primary" id="myBtn" data-toggle="modal" data-target="#exampleModalLong">
+                                            SMART ENTRY
+                                        </button>
+                                    </div>
+                                                                       
+                                    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                              <div class="modal-header">
+                                                    <h5 class="modal-title h5">SMART ENTRY</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Sila masukkan maklumat pelanggan mengikut format berikut:</p>
+                                                    <p>
+                                                        NAMA#ALAMAT#<br />
+                                                        NO H/P#E-MAIL
+                                                    </p>
+                                                    <textarea id="detail" class="form-control" name="detail-all" style="height: 100px;" rows="4"></textarea>
+                                                </div>
+                                               
+
+                                                <div class="modal-footer">
+                                                  
+                                                    <button type="button" id="bata" class="btn btn-secondary" data-dismiss="modal" value="Clear" onclick="javascript:eraseText();" aria-label="Close">
+                                                        <script src="modApp.js"></script>
+                                                        BATAL</button>
+<button id="bok" type="button" class="btn btn-primary" onclick="javascript:detectSpecial();">
+    <script src="modApp.js"></script>
+    OK
+</button>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                
+<script src="SmartEntry.js"></script>
+                                </div>
+
+<div class="form-group row">
+    <label for="full_name" class="col-md-4 col-form-label text-md-right">Nama</label>
+    <div class="col-md-6">
+        <input type="text" id="full_name" class="form-control" name="full-name">
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="phone_number" class="col-md-4 col-form-label text-md-right">No. Telefon</label>
+    <div class="col-md-6">
+        <input type="text" id="phone_number" class="form-control" name="phone">
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="email_address" class="col-md-4 col-form-label text-md-right">Alamat Emel</label>
+    <div class="col-md-6">
+        <input type="text" id="email_address" class="form-control" name="email-address">
+    </div>
+</div>
+                          
+
+
+<div class="form-group row">
+    <label for="present_address" class="col-md-4 col-form-label text-md-right">Alamat</label>
+    <div class="col-md-6">
+        <textarea id="present_address" class="form-control" name="alamat"></textarea>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="poscode" class="col-md-4 col-form-label text-md-right">Poskod</label>
+    <div class="col-md-6">
+        <input type="text" id="poskod_address" class="form-control" name="poskod">
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="town" class="col-md-4 col-form-label text-md-right">Bandar</label>
+    <div class="col-md-6">
+        <input type="text" id="bandar_address" class="form-control" name="bandar">
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <label for="state" class="col-md-4 col-form-label text-md-right">Negeri/Negara</label>
+    <div class="col-md-6">
+        <select name="state" id="state_country" class="form-control ">
+            <option value="pilih">Sila pilih..</option>
+            <option value="perlis">Perlis</option>
+            <option value="kedah">Kedah</option>
+            <option value="pulau pinang">Pulau Pinang</option>
+            <option value="kelantan">Kelantan</option>
+            <option value="terengganu">terengganu</option>
+            <option value="pahang">Pahang</option>
+            <option value="perak">Perak</option>
+            <option value="selangor">Selangor</option>
+            <option value="kuala lumpur">Kuala Lumpur</option>
+            <option value="putrajaya">Putrajaya</option>
+            <option value="negeri sembilan">Negeri Sembilan</option>
+            <option value="melaka">Melaka</option>
+            <option value="johor">Johor</option>
+            <option value="labuan">Labuan</option>
+            <option value="sabah">Sabah</option>
+            <option value="sarawak">Sarawak</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-md-4 col-form-label">
+    </div>
+    <div class="col-md-5 col-form-label">
+        <input type="radio" id="ninja" name="ninjavan" value="ninja van">
+        <label for="option">Ninja Van</label><br>
+        <input type="radio" id="jt" name="jnt" value=" j & t">
+        <label for="option">J&T</label><br>
+        <input type="radio" id="self" name="selfcollect" value="self collect">
+        <label for="option">Self Collect</label><br>
+    </div>
+
+</div>
+
+<div class="col-md-6 offset-md-4">
+
+       <button type="button" class="btn btn-primary" onclick="javascript:validform();">
+        <script src="module2.js"></script>
+        Next
+
+    </button>
+     
+</div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
