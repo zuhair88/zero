@@ -11,10 +11,8 @@ function detectSpecial() {
     var alamatdetail = myArr[1];
     document.getElementById("full_name").value = myArr[0]; 
    var bb = myArr[2];
-    alert(bb);
-    if (bb == "" || bb == undefined) {
-        alert("xde");
-    } else {
+       if (bb == "" || bb == undefined) {
+         } else {
         document.getElementById("phone_number").value = myArr[2];
     }
     if (myArr[3] == null || myArr[3] == "") {
